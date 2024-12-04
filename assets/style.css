@@ -1,0 +1,672 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+body {
+    background: #f7f7f7;
+    font-family: "Poppins", sans-serif;
+}
+
+*::selection {
+    background: #2b3dda;
+    color: #fff;
+}
+html::-webkit-scrollbar {
+    width: 0.8rem;
+}
+html::-webkit-scrollbar-track {
+    background: rgb(235, 202, 245);
+}
+html::-webkit-scrollbar-thumb {
+    background: #420177;
+}
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background: #e6eff1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.loader-container.fade-out {
+    top: -120%;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.7rem 10%;
+    height: 6.5rem;
+    background-color: #fff;
+    box-shadow: 0 1px 4px rgba(146, 161, 176, 0.3);
+}
+section {
+    min-height: 100vh;
+    padding: 2rem 9%;
+    align-items: center;
+}
+.heading {
+    font-size: 3.5rem;
+    color: rgb(32, 32, 32);
+    font-weight: 800;
+    text-align: center;
+}
+.heading span {
+    color: rgb(115, 3, 167);
+}
+header .logo {
+    font-size: 1.9rem;
+    font-weight: 800;
+    text-decoration: none;
+    color: #0e2431;
+}
+header .logo img {
+    width: 100%;
+    height: 6.5rem;
+    display: block;
+    object-fit: contain;
+    padding: 5px;
+}
+header .logo .sra {
+    font-size: 2.9rem;
+}
+header .logo i {
+    font-size: 2.2rem;
+}
+header .logo:hover {
+    color: #fc8c05;
+}
+header .navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header .navbar li {
+    margin-left: 2.5rem;
+}
+header .navbar ul li a {
+    font-size: 1.57rem;
+    color: #0e2431;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.04rem;
+    transition: 0.2s;
+}
+header .navbar ul li a.active,
+header .navbar ul li a:hover {
+    color: #011aff;
+    border-bottom: 0.2rem solid #011aff;
+    padding: 0.5rem 0;
+}
+
+#menu {
+    font-size: 3rem;
+    cursor: pointer;
+    color: rgb(24, 2, 63);
+    display: none;
+}
+@media (max-width: 768px) {
+    #menu {
+        display: block;
+    }
+    header .navbar {
+        position: fixed;
+        top: 6.5rem;
+        right: -120%;
+        width: 75%;
+        height: 100%;
+        text-align: left;
+        align-items: flex-start;
+        background-color: #0e0f31;
+    }
+    header .navbar ul {
+        flex-flow: column;
+        padding: 1rem;
+    }
+    header .navbar ul li {
+        text-align: center;
+        width: 100%;
+        margin: 1rem 0;
+        border-radius: 0.5rem;
+        width: 26rem;
+    }
+    header .navbar ul li a {
+        display: block;
+        padding: 1rem;
+        text-align: left;
+        color: #fff;
+        font-size: 2rem;
+    }
+    header .navbar ul li a.active,
+    header .navbar ul li a:hover {
+        padding: 1rem;
+        color: #fff;
+        border-radius: 0.5rem;
+        border-bottom: 0.5rem solid #011aff;
+    }
+    .fa-times {
+        transform: rotate(180deg);
+    }
+    header .navbar.nav-toggle {
+        right: 0;
+    }
+}
+.home {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    z-index: 1;
+}
+
+.home::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/bg-home.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    /*background-attachment: fixed;*/
+    background-size: cover;
+    filter: blur(18px);
+    z-index: -1;
+}
+
+.home * {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+}
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 1rem;
+    z-index: 1;
+    align-items: center;
+    justify-items: center;
+}
+.home .content h2 {
+    font-size: 7rem;
+    font-weight: 800;
+    color: #002057;
+}
+.home .content h2 span {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #ff7b00;
+}
+.home .content p {
+    font-size: 3rem;
+    color: #000;
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.home .content p span {
+    font-size: 2.5rem;
+    color: rgb(148, 8, 8);
+    font-weight: 600;
+    padding: 1rem 0;
+}
+.home .btn {
+    margin-top: 1rem;
+    line-height: 0;
+    padding: 1.6rem 3rem;
+    border-radius: 4em;
+    transition: 0.5s;
+    gap: 1rem;
+    color: #fff;
+    background: #2506ad;
+    box-shadow: 0px 5px 18px rgba(48, 68, 247, 0.6);
+    font-family: "Nunito", sans-serif;
+}
+.home .btn span {
+    font-weight: 700;
+    font-size: 1.7rem;
+    letter-spacing: 0.1rem;
+}
+.home .btn i {
+    margin-left: 0.3rem;
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+.home .btn:hover {
+    background: #1a047e;
+}
+.home .btn:hover i {
+    transform: translateX(5px);
+}
+.about {
+    background: rgb(255, 255, 255);
+}
+.about .row {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    padding: 4rem;
+}
+.about .row .content {
+    flex: 1 1 45rem;
+    padding: 3rem;
+}
+.about .row .content h3 {
+    color: rgb(27, 27, 27);
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+@media screen and (max-width: 600px) {
+    .about .row {
+        padding: 0.5rem;
+        margin-bottom: 7rem;
+    }
+    .about .row .content {
+        padding: 1rem;
+    }
+}
+.services {
+    position: relative;
+}
+
+.services#portfolio{
+    background-color: #ffffff;
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("./images/bg-services.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
+}
+
+.services::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.4);
+    z-index: 0;
+}
+
+.services * {
+    position: relative;
+    z-index: 1;
+    color: #000;
+}
+
+.services {
+    min-height: 90vh;
+}
+.services h2 {
+    color: #000000;
+}
+.services h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    border: 2px solid black;
+    background-color: black;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    display: inline-block;
+}
+.services .heading span {
+    color: rgb(255, 230, 0);
+}
+.services .container {
+    color: #fff;
+    display: block;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 1rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.services .container#port{
+    width: 100%;
+    color: #fff;
+    display: block;
+    border-radius: 1rem;
+    padding: 2rem;
+    gap: 1rem;
+    margin: auto;
+    margin-top: 2rem;
+}
+.services .container .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+}
+.services .container .row#portfolio1 {
+    display: grid;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.8rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+.services .container .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    max-width: 400px;
+    max-height: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255);
+    transition: 0.2s;
+}
+.services .container .imaage {
+    gap: 1rem;
+}
+.services .container .imaage .bar {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 1rem;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255);
+    transition: 0.2s;
+}
+.services .container .imaage .bar img {
+    width: auto;
+    height: 100%;
+    max-width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .services .container .row:not(#portfolio1) .bar:nth-child(1) {
+        float: right;
+        margin-left: 160px;
+    }
+
+    .services .container .row:not(#portfolio1) .bar:nth-child(2) {
+        float: left;
+        margin-right: 160px;
+    }
+}
+.services .container .bar:hover {
+    box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.services .container .imaage .bar:hover{
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0) !important;
+}
+.services .container .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.services .container .bar .info i {
+    font-size: 4rem;
+}
+.services .container .bar .info span {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins";
+    margin-left: 0.5rem;
+}
+.services .container2 {
+    color: #fff;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.services .container2 .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    flex-wrap: wrap;
+    gap: 1.1rem;
+}
+.services .container2 .bar {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 1rem;
+    align-self: center;
+    justify-self: center;
+    max-width: 400px;
+    max-height: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    transition: 0.2s;
+}
+.services .container2 .bar:hover {
+    box-shadow: 0 8px 10px rgba(0, 2, 68, 0.8) !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.services .container2 .bar .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.services .container2 .bar .info i {
+    font-size: 4rem;
+}
+.services .container2 .bar .info span {
+    font-size: 2rem;
+    font-weight: 500;
+    font-family: "Poppins";
+    margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .services .container {
+        padding: 0;
+        margin: 0;
+    }
+    .services .container#port {
+        padding: 0;
+        margin: 0;
+    }
+    .services .container .row {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+    .services .container .imaage .bar {
+        flex: none;
+    }
+    .services .container .row#portfolio1 {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+    .services .container {
+        margin-top: 5px;
+        width: 100%;
+    }
+    .services .container#port {
+        margin-top: 5px;
+        width: 100%;
+    }
+    .services .container2 {
+        padding: 0;
+        margin: 0;
+    }
+    .services .container2 .row {
+        grid-template-columns: repeat(1, 1fr);
+        margin: 1rem;
+        padding: 2rem 0.2rem 2rem 0.2rem;
+        gap: 1rem;
+    }
+    .services .container2 {
+        margin-top: 5px;
+        width: 100%;
+    }
+}
+.footer {
+    min-height: auto;
+    padding-top: 0;
+    background: rgb(0, 1, 43);
+}
+.footer .box-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.footer .box-container .imagee {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 2rem;
+    width: 80%;
+}
+.footer .box-container .box {
+    flex: 1 1 25rem;
+    margin: 2.5rem;
+}
+.footer .box-container .box h3 {
+    font-size: 2.5rem;
+    color: #fff;
+    padding-bottom: 1rem;
+    font-weight: normal;
+}
+.footer .box-container .box p {
+    font-size: 1.5rem;
+    color: #ccc;
+    padding: 0.7rem 0;
+    text-transform: none;
+}
+.footer .box-container .box p i {
+    padding-right: 1rem;
+    color: #ffae00;
+}
+.footer .box-container .box a {
+    font-size: 1.5rem;
+    color: rgb(238, 238, 238);
+    padding: 0.3rem 0;
+    display: block;
+}
+.footer .box-container .box a:hover {
+    color: #ffae00;
+}
+.footer .box-container .box .share {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+}
+.footer .box-container .box .share a {
+    height: 4rem;
+    width: 4rem;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 5rem;
+    font-size: 1.7rem;
+    margin-right: 1rem;
+    transition: 0.2s;
+    background: rgb(230, 230, 230);
+    color: #02094b;
+    border: none;
+}
+.footer .box-container .box .share a:hover {
+    background: transparent;
+    transform: scale(0.98);
+    border: 0.1rem solid rgb(180, 178, 178);
+    color: #ffae00;
+}
+.footer .credit {
+    padding: 1rem 0 0 0;
+    text-align: center;
+    font-size: 1.1rem;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    color: #fff;
+    border-top: 0.1rem solid #fff3;
+}
+.footer .credit a {
+    color: #ffae00;
+}
+.footer .fa {
+    color: #e90606;
+    margin: 0 0.3rem;
+    font-size: 1.5rem;
+    animation: pound 0.35s infinite alternate;
+}
+@-webkit-keyframes pound {
+    to {
+        transform: scale(1.1);
+    }
+}
+@keyframes pound {
+    to {
+        transform: scale(1.1);
+    }
+}
+@media (max-width: 450px) {
+    .footer .box-container .box {
+        margin: 1.5rem;
+    }
+    .footer .box-container .box p {
+        padding: 0.7rem;
+    }
+    .footer .box-container .box .share a {
+        padding: 1.2rem;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+    body {
+        padding-right: 0;
+    }
+    section {
+        padding: 2rem;
+    }
+}

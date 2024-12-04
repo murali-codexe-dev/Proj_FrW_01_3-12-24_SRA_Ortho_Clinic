@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "./assets/images/medikit.png",
+    "rows": "row1",
+    "heading": "Detailed Comphrensive",
+    "description": "Joints abd Spine - Adults and Children"
+  },
+  {
+    "icon": "./assets/images/medikit.png",
+    "rows": "row1",
+    "heading": "Sports Injury",
+    "description": "Diagnosis management and Rehabilitation"
+  },
+  {
+    "icon": "./assets/images/medikit.png",
+    "rows": "row2",
+    "heading": "Join Preservation Techniques",
+    "description": "Stem cell and PRP Injection Hyaluronic injection for Athelets"
+  },
+  {
+    "icon": "./assets/images/medikit.png",
+    "rows": "row2",
+    "heading": "Spine Problems",
+    "description": "Disc Surgery, Spine infections for Chronic back pain"
+  },
+  {
+    "icon": "./assets/images/medikit.png",
+    "rows": "row2",
+    "heading": "Join Preservation Surgery",
+    "description": "Arthoscopy/Cartilage regeneration Ligament reconstruction"
+  }
+]

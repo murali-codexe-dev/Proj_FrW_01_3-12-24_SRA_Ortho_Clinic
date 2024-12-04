@@ -1,0 +1,10 @@
+{
+  "name": "Proj_FrW_01_3-12-24_SRA_Ortho_Clinic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "assets/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}
